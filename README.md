@@ -1,7 +1,7 @@
 # Dotfiles
 My dotfiles and config
 
-## Make you install Nerd Fonts
+## Install Nerd Fonts
 ```
 mkdir ~/.nerd-fonts
 git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts/
