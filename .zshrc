@@ -1,3 +1,5 @@
+eval `keychain --agents ssh --eval id_rsa`
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -113,8 +115,6 @@ fpath=(~/.asdf/completions $fpath)
 autoload -Uz compinit && compinit
 . ~/.asdf/plugins/golang/set-env.zsh
 # end asdf
-
-eval `keychain --agents ssh --eval id_rsa`
 
 export JAVA_HOME=/home/andre/.asdf/installs/java/corretto-17.0.8.7.1/
 
