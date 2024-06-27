@@ -9,3 +9,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Turso
 export PATH="/home/andre/.turso:$PATH"
+
+# ASDF
+. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
