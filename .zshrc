@@ -16,5 +16,11 @@ export PATH="/home/andre/.turso:$PATH"
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
+# SSH Agent
+if [ -z "$SSH_AGENT_PID" ]; then
+    eval ssh-agent
+fi
+
 # Other
 export PATH="$PATH:$HOME/bin"
+
