@@ -1,5 +1,11 @@
 eval "$(starship init zsh)"
 
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # Dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
@@ -22,5 +28,6 @@ if [ -z "$SSH_AGENT_PID" ]; then
 fi
 
 # Other
-export PATH="$PATH:$HOME/bin"
+export IDEA_HOME="$HOME/programs/idea-IU-242.23339.11/bin"
+export PATH="$PATH:$HOME/bin:$IDEA_HOME"
 
