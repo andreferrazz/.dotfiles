@@ -24,10 +24,15 @@ autoload -Uz compinit && compinit
 
 # SSH Agent
 if [ -z "$SSH_AGENT_PID" ]; then
-    eval ssh-agent
+    eval `ssh-agent` &>/dev/null
 fi
 
 # Other
 export IDEA_HOME="$HOME/programs/idea-IU-242.23339.11/bin"
-export PATH="$PATH:$HOME/bin:$IDEA_HOME"
+export STUDIO_HOME="$HOME/programs/android-studio/bin"
+export PATH="$PATH:$HOME/bin:$IDEA_HOME:$STUDIO_HOME"
+
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
 
