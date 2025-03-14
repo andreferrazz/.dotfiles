@@ -18,9 +18,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="/home/andre/.turso:$PATH"
 
 # ASDF
-. "$HOME/.asdf/asdf.sh"
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
+export PATH="$PATH:$HOME/.asdf/shims"
+#. "$HOME/.asdf/asdf.sh"
+#fpath=(${ASDF_DIR}/completions $fpath)
+#autoload -Uz compinit && compinit
 
 # SSH Agent
 if [ -z "$SSH_AGENT_PID" ]; then
@@ -30,7 +31,8 @@ fi
 # Other
 export IDEA_HOME="$HOME/programs/idea-IU-242.23339.11/bin"
 export STUDIO_HOME="$HOME/programs/android-studio/bin"
-export PATH="$PATH:$HOME/bin:$IDEA_HOME:$STUDIO_HOME"
+export GO_HOME="/usr/local/go/bin"
+export PATH="$PATH:$HOME/bin:$IDEA_HOME:$STUDIO_HOME:$GO_HOME"
 
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
